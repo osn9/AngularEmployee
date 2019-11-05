@@ -1,0 +1,26 @@
+<div class="row" >
+<div class="col-md-5">
+
+<form #form="ngForm" (submit)="onSubmit(form)" autocomplete="off">
+        <input type="hidden" name="id" #id="ngModel" [(ngModel)]="service.formData.id" >
+    <div class="form-group">
+    <label>
+        Full Name
+    </label>
+    <input name="officeName" #officeName="ngModel" [(ngModel)]="service.formData.officeName"  class="form-control" >
+    <div class="validation-error" *ngIf="officeName.invalid && officeName.touched " >This is required</div>
+    </div >
+    <div class="form-group">
+            <label>
+                Addreess
+            </label>
+            <input name="officeAddress" #officeAddress="ngModel" [(ngModel)]="service.formData.officeAddress"  class="form-control" >
+            <div class="validation-error" *ngIf="officeAddress.invalid && officeAddress.touched " >This is required</div>
+            </div>
+    <button type="submit" class="btn btn-primary btn-lg "> Submit</button>
+    </form>
+
+</div>
+</div>
+
+    

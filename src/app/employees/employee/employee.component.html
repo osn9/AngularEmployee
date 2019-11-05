@@ -1,0 +1,20 @@
+
+ <a  [routerLink]="['/Office']">CREATE OFFICE</a>
+ //
+ <a  [routerLink]="['/Office']">OFFICE LIST</a>
+ <br>
+ <div class="clearfix">
+
+ </div>
+
+<form #form="ngForm" (submit)="onSubmit(form)" autocomplete="off">
+    <input type="hidden" name="id" #id="ngModel" [(ngModel)]="service.formData.id" >
+<div class="form-group">
+<label>
+    Full Name
+</label>
+<input name="Name" #Name="ngModel" [(ngModel)]="service.formData.Name"  class="form-control" >
+<div class="validation-error" *ngIf="Name.invalid && Name.touched " >This is required</div>
+</div>
+<button type="submit" class="btn btn-primary btn-lg btn-block"> Submit</button>
+</form>
